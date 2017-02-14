@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brazzer it!</title>
+  <meta name="description" content="Brazzer it!">
+  <meta name="keywords" content="lol,brazzers,fun,funny,brazzerit">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #content {
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    #drop-zone {
+      flex: 1;
+      border: .5rem dashed #444;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      border-color: #777;
+      background: lightgrey;
+    }
+
+    #drop-zone.on-drag {
+      border-color: #333;
+    }
+
+    #options {
+      position: absolute;
+      align-self: baseline;
+      z-index: 10;
+      opacity: .5;
+    }
+
+    #options:hover {
+      opacity: 1;
+    }
+
+    #placeholder {
+      font-size: 3rem;
+      color: #777;
+      text-align: center;
+      width: 100%;
+      font-family: monospace;
+      font-variant: small-caps;
+    }
+
+    #canvas {
+      /*background: pink;*/
+    }
+
+    #download {
+      background: url(ic_get_app_black_48px.svg);
+      width: 3em;
+      height: 3em;
+      display: inline-block;
+    }
+
+    #download:hover {
+      border-radius: 1.5em;
+      background-color: darkgrey;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div id="drop-zone">
+      <p id="placeholder">Drop your image here</p>
+      <canvas id="preview" class="hidden"></canvas>
+      <canvas id="output" class="hidden"></canvas>
+      <div id="options" class="hidden">
+        <label for="" class="hidden">Logo position</label>
+        <select id="logo-location" class="hidden">
+          <option value="">Logo position</option>
+          <option value="bottom-left">Bottom Left</option>
+          <option value="bottom-right">Bottom Right</option>
+          <option value="top-left">Top Left</option>
+          <option value="top-right">Top Right</option>
+        </select>
+        <select id="logo-type" class="hidden">
+          <option value=""></option>
+        </select>
+        <a id="download"><i class="md-icon dp48"></i></a>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
